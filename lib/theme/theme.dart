@@ -29,7 +29,10 @@ class AppTheme {
     accentColor: LightColor.lightblack,
     primaryColorDark: LightColor.Darker,
     primaryColorLight: LightColor.brighter,
-    cardTheme: CardTheme(color: LightColor.background),
+    cardTheme: CardTheme(
+      color: LightColor.background,
+      margin: EdgeInsets.all(10),
+    ),
     textTheme: TextTheme(
         display1:
             GoogleFonts.cabin(textStyle: TextStyle(color: LightColor.black))),

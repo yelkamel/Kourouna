@@ -1,5 +1,5 @@
-import 'package:kourouna/pages/widgets/margin.dart';
-import 'package:kourouna/theme/color/light_color.dart';
+import 'package:Kourouna/pages/widgets/margin.dart';
+import 'package:Kourouna/theme/color/light_color.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';

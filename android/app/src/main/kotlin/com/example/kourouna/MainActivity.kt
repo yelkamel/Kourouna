@@ -1,4 +1,4 @@
-package com.example.kourouna
+package com.example.Kourouna
 
 import androidx.annotation.NonNull;
 import io.flutter.embedding.android.FlutterActivity

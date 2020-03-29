@@ -1,4 +1,4 @@
-# kourouna
+# Kourouna
 
 A new Flutter project.
 

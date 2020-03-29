@@ -1,10 +1,11 @@
 class Images {
   // WHAT TO DO
-  static const String washHands = "assets/images/advice/washhands.png";
-  static const String noGroup = "assets/images/advice/noGroup.png";
-  static const String socialDistance = "assets/images/advice/safedistance.png";
-  static const String nohandshake = "assets/images/advice/nohandshake.png";
-  static const String stayHome = "assets/images/advice/stayhome.png";
+  static const String washHands = "assets/images/stayhome/washhands.png";
+  static const String noGroup = "assets/images/stayhome/noGroup.png";
+  static const String socialDistance =
+      "assets/images/stayhome/safedistance.png";
+  static const String nohandshake = "assets/images/stayhome/nohandshake.png";
+  static const String stayHome = "assets/images/stayhome/stayhome.png";
 
   // Symtomps
   static const String symptomsBodyAche = "assets/images/symptoms/body_ache.png";
@@ -19,6 +20,8 @@ class Images {
   static const String stay = "assets/images/info/stay.png";
   static const String advice = "assets/images/info/advice.png";
 
+  static const String instructionMedical =
+      "assets/images/instruction_medical.png";
+
   // Numbers
-  static const int timeOutDuration = 90;
 }

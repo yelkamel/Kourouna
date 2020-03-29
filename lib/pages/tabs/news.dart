@@ -1,11 +1,11 @@
 import 'dart:async';
 
-import 'package:kourouna/blocs/blocs.dart';
-import 'package:kourouna/models/ncovid_data.dart';
-import 'package:kourouna/models/serializers.dart';
-import 'package:kourouna/pages/widgets/card/news_card.dart';
-import 'package:kourouna/pages/widgets/margin.dart';
-import 'package:kourouna/theme/color/light_color.dart';
+import 'package:Kourouna/blocs/blocs.dart';
+import 'package:Kourouna/models/ncovid_data.dart';
+import 'package:Kourouna/models/serializers.dart';
+import 'package:Kourouna/pages/widgets/card/news_card.dart';
+import 'package:Kourouna/pages/widgets/margin.dart';
+import 'package:Kourouna/theme/color/light_color.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';

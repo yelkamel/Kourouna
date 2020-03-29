@@ -1,8 +1,8 @@
-import 'package:kourouna/models/case_model.dart';
-import 'package:kourouna/models/general_data_model.dart';
-import 'package:kourouna/models/news_model.dart';
-import 'package:kourouna/models/other_case_model.dart';
-import 'package:kourouna/repositories/api_client.dart';
+import 'package:Kourouna/models/case_model.dart';
+import 'package:Kourouna/models/general_data_model.dart';
+import 'package:Kourouna/models/news_model.dart';
+import 'package:Kourouna/models/other_case_model.dart';
+import 'package:Kourouna/repositories/api_client.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;

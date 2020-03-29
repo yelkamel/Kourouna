@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:kourouna/@constants/images.dart';
-import 'package:kourouna/pages/widgets/button/cross_button.dart';
-import 'package:kourouna/pages/widgets/margin.dart';
+import 'package:Kourouna/@constants/images.dart';
+import 'package:Kourouna/pages/widgets/button/cross_button.dart';
+import 'package:Kourouna/pages/widgets/margin.dart';
 
-class Advice extends StatelessWidget {
+class StayHome extends StatelessWidget {
   Widget _buildBigCard(BuildContext context, String image, String text) {
     return Card(
       elevation: 3,
@@ -51,16 +51,16 @@ class Advice extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        body: Stack(children: [
+    return Scaffold(
+      body: SafeArea(
+        child: Stack(children: [
           Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             mainAxisSize: MainAxisSize.max,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
               Hero(
-                tag: 'advice',
+                tag: 'stayhome',
                 child: Container(
                   width: 150,
                   height: 150,
@@ -80,7 +80,7 @@ class Advice extends StatelessWidget {
                           "Pour tenir la maladie à distance, restez à plus d’un mètre de distance les uns des autres"),
                       _buildCard(context, Images.noGroup,
                           "Toussez ou éternuez dans votre coude ou dans un mouchoir"),
-                      _buildCard(context, Images.noGroup,
+                      _buildCard(context, Images.nohandshake,
                           "Saluez sans se serrer la main, pas d'embrassades"),
                     ],
                   ),

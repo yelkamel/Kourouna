@@ -1,8 +1,8 @@
-import 'package:kourouna/pages/tabs/home.dart';
-import 'package:kourouna/pages/tabs/information.dart';
-import 'package:kourouna/pages/tabs/settings.dart';
-import 'package:kourouna/pages/widgets/margin.dart';
-import 'package:kourouna/theme/color/light_color.dart';
+import 'package:Kourouna/pages/tabs/home.dart';
+import 'package:Kourouna/pages/tabs/information.dart';
+import 'package:Kourouna/pages/tabs/settings.dart';
+import 'package:Kourouna/pages/widgets/margin.dart';
+import 'package:Kourouna/theme/color/light_color.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -91,17 +91,17 @@ class _HomeState extends State<Home> {
                   GButton(
                     icon: LineIcons.list_ul,
                     text: 'Guides',
-                    backgroundColor: AppColors.red,
+                    backgroundColor: AppColors.cyan,
                   ),
                   GButton(
                     icon: LineIcons.home,
                     text: 'Home',
-                    backgroundColor: AppColors.red,
+                    backgroundColor: AppColors.cyan,
                   ),
                   GButton(
                     icon: LineIcons.cog,
                     text: 'Settings',
-                    backgroundColor: AppColors.red,
+                    backgroundColor: AppColors.cyan,
                   ),
                 ],
                 selectedIndex: selectedIndex,

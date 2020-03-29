@@ -1,4 +1,4 @@
-name: kourouna
+name: Kourouna
 description: A new Flutter project.
 
 # The following defines the version and build number for your application.
@@ -26,7 +26,7 @@ dependencies:
   equatable: ^1.1.1
   line_icons: ^0.2.0
   shimmer: ^1.1.0
-  shared_preferences: ^0.5.6+2
+  shared_preferences: ^0.5.6+3
   webview_flutter: ^0.3.19+9
   built_value: ^7.0.9
   built_collection: ^4.3.2
@@ -37,7 +37,11 @@ dependencies:
   google_fonts: 0.2.0
   calendar_strip: ^1.0.6
   flutter_beautiful_popup: ^1.5.0
-
+  google_maps_flutter: ^0.4.0
+  lottie: ^0.2.2
+  flutter_local_notifications: ^1.2.2
+  provider: ^4.0.4
+  swipe_stack: ^1.0.0
 
   cupertino_icons: ^0.1.2
 
@@ -58,11 +62,11 @@ flutter:
   uses-material-design: true
 
   assets:
-    - assets/images/advice/washhands.png
-    - assets/images/advice/noGroup.png
-    - assets/images/advice/safedistance.png
-    - assets/images/advice/nohandshake.png
-    - assets/images/advice/stayhome.png
+    - assets/images/stayhome/washhands.png
+    - assets/images/stayhome/noGroup.png
+    - assets/images/stayhome/safedistance.png
+    - assets/images/stayhome/nohandshake.png
+    - assets/images/stayhome/stayhome.png
 
     - assets/images/symptoms/body_ache.png
     - assets/images/symptoms/breathe.png
@@ -74,6 +78,10 @@ flutter:
     - assets/images/info/distance.png
     - assets/images/info/stay.png
     - assets/images/info/advice.png
+
+    - assets/images/instruction_medical.png
+
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

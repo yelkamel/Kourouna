@@ -1,6 +1,11 @@
-import 'package:kourouna/@constants/images.dart';
-import 'package:kourouna/pages/widgets/information_title_card.dart';
-import 'package:kourouna/theme/color/light_color.dart';
+import 'package:Kourouna/@constants/images.dart';
+import 'package:Kourouna/navigation/fade_page_route.dart';
+import 'package:Kourouna/pages/screens/distance.dart';
+import 'package:Kourouna/pages/screens/stay_home.dart';
+import 'package:Kourouna/pages/screens/symptoms.dart';
+import 'package:Kourouna/pages/screens/virus.dart';
+import 'package:Kourouna/pages/widgets/information_title_card.dart';
+import 'package:Kourouna/theme/color/light_color.dart';
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:responsive_screen/responsive_screen.dart';
@@ -25,12 +30,14 @@ class _InformationScreenState extends State<InformationScreen>
               GestureDetector(
                 child: InformationTitleCard(
                   image: Images.virus,
-                  subTitle: 'Comment il se propage ?',
-                  title: 'De la manière la plus vil',
+                  subTitle: "Que sait-on en ce moment ? ",
+                  title: "Le CodVID19, le Corona",
                   tag: 'virus',
                 ),
                 onTap: () {
-                  Navigator.of(context).pushNamed('/virus');
+                  Navigator.of(context, rootNavigator: true).push(FadePageRoute(
+                    screen: Virus(),
+                  ));
                 },
               ),
               SizedBox(height: hp(3)),
@@ -42,7 +49,9 @@ class _InformationScreenState extends State<InformationScreen>
                   tag: 'symptoms',
                 ),
                 onTap: () {
-                  Navigator.of(context).pushNamed('/symptoms');
+                  Navigator.of(context, rootNavigator: true).push(FadePageRoute(
+                    screen: Symptoms(),
+                  ));
                 },
               ),
               SizedBox(height: hp(3)),
@@ -51,21 +60,25 @@ class _InformationScreenState extends State<InformationScreen>
                   image: Images.stay,
                   subTitle: 'Que dois-t-on faire ?',
                   title: 'Des astuces pour gagner la guerre',
-                  tag: 'whattodo',
+                  tag: 'stayhome',
                 ),
                 onTap: () {
-                  Navigator.of(context).pushNamed('/advice');
+                  Navigator.of(context, rootNavigator: true).push(FadePageRoute(
+                    screen: StayHome(),
+                  ));
                 },
               ),
               SizedBox(height: hp(3)),
               GestureDetector(
                 child: InformationTitleCard(
                     image: Images.distance,
-                    subTitle: 'les endroits safe ou sortir ?',
+                    subTitle: 'Ou peut-on sortir ?',
                     title: 'Les cas près de chez moi',
-                    tag: 'wheretogo'),
+                    tag: 'distance'),
                 onTap: () {
-                  Navigator.of(context).pushNamed('/distance');
+                  Navigator.of(context, rootNavigator: true).push(FadePageRoute(
+                    screen: SocialDistance(),
+                  ));
                 },
               ),
             ],

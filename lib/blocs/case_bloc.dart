@@ -1,10 +1,10 @@
 import 'dart:convert';
 
-import 'package:kourouna/models/case_model.dart';
-import 'package:kourouna/models/general_data_model.dart';
-import 'package:kourouna/models/home_data_model.dart';
-import 'package:kourouna/repositories/api_repository.dart';
-import 'package:kourouna/utils/storageutil.dart';
+import 'package:Kourouna/models/case_model.dart';
+import 'package:Kourouna/models/general_data_model.dart';
+import 'package:Kourouna/models/home_data_model.dart';
+import 'package:Kourouna/repositories/api_repository.dart';
+import 'package:Kourouna/utils/storageutil.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

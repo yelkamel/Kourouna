@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:kourouna/@constants/images.dart';
-import 'package:kourouna/pages/widgets/button/cross_button.dart';
-import 'package:kourouna/pages/widgets/margin.dart';
-import 'package:kourouna/theme/theme.dart';
+import 'package:Kourouna/@constants/images.dart';
+import 'package:Kourouna/pages/widgets/button/cross_button.dart';
+import 'package:Kourouna/pages/widgets/margin.dart';
+import 'package:Kourouna/theme/theme.dart';
 import 'package:line_icons/line_icons.dart';
 
 import '../../theme/color/light_color.dart';
@@ -55,50 +55,47 @@ class Symptoms extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Hero(
-      tag: 'symptoms',
-      child: Scaffold(
-        body: SafeArea(
-          child: Stack(children: [
-            Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              mainAxisSize: MainAxisSize.max,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: <Widget>[
-                Hero(
-                  tag: 'symptoms',
-                  child: Container(
-                    width: 150,
-                    height: 150,
-                    child: Image.asset(Images.advice),
+    return Scaffold(
+      body: SafeArea(
+        child: Stack(children: [
+          Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            mainAxisSize: MainAxisSize.max,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              Hero(
+                tag: 'symptoms',
+                child: Container(
+                  width: 150,
+                  height: 150,
+                  child: Image.asset(Images.advice),
+                ),
+              ),
+              Expanded(
+                child: Container(
+                  child: ListView(
+                    padding: EdgeInsets.only(bottom: 100),
+                    children: [
+                      _buildCard(Images.symptomsBodyAche,
+                          "Des courbatures sans faire de sport"),
+                      _buildCard(Images.symptomsBreath,
+                          "Des difficulters à respirer sans être asmathiques"),
+                      _buildCard(Images.symptomsFever, "Une fièvre"),
+                      _buildCard(Images.symptomsHeadAche,
+                          "Des mots de tête incéssant"),
+                      _buildCard(Images.symptomsRhume,
+                          "Des toux comme si c'était un rhume"),
+                    ],
                   ),
                 ),
-                Expanded(
-                  child: Container(
-                    child: ListView(
-                      padding: EdgeInsets.only(bottom: 100),
-                      children: [
-                        _buildCard(Images.symptomsBodyAche,
-                            "Des courbatures sans faire de sport"),
-                        _buildCard(Images.symptomsBreath,
-                            "Des difficulters à respirer sans être asmathiques"),
-                        _buildCard(Images.symptomsFever, "Une fièvre"),
-                        _buildCard(Images.symptomsHeadAche,
-                            "Des mots de tête incéssant"),
-                        _buildCard(Images.symptomsRhume,
-                            "Des toux comme si c'était un rhume"),
-                      ],
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            Align(
-              alignment: Alignment.bottomCenter,
-              child: CrossButton(),
-            )
-          ]),
-        ),
+              ),
+            ],
+          ),
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: CrossButton(),
+          )
+        ]),
       ),
     );
   }

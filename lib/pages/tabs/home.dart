@@ -1,15 +1,15 @@
 import 'dart:async';
 
-import 'package:kourouna/blocs/blocs.dart';
-import 'package:kourouna/pages/widgets/card/global_card.dart';
-import 'package:kourouna/pages/widgets/card/other_card.dart';
-import 'package:kourouna/pages/widgets/margin.dart';
-import 'package:kourouna/theme/color/light_color.dart';
+import 'package:Kourouna/blocs/blocs.dart';
+import 'package:Kourouna/pages/widgets/card/global_card.dart';
+import 'package:Kourouna/pages/widgets/card/other_card.dart';
+import 'package:Kourouna/pages/widgets/margin.dart';
+import 'package:Kourouna/theme/color/light_color.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:kourouna/utils/calculate.dart';
+import 'package:Kourouna/utils/calculate.dart';
 import 'package:responsive_screen/responsive_screen.dart';
 
 class HomeScreen extends StatefulWidget {

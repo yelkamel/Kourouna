@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:kourouna/theme/theme.dart';
 
 class LightColor {
   static const Color background = Color(0XFFEFEFF2);

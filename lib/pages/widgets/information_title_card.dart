@@ -1,5 +1,5 @@
-import 'package:kourouna/theme/color/light_color.dart';
-import 'package:kourouna/theme/theme.dart';
+import 'package:Kourouna/theme/color/light_color.dart';
+import 'package:Kourouna/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_screen/responsive_screen.dart';
 
@@ -47,11 +47,12 @@ class InformationTitleCard extends StatelessWidget {
                     Hero(
                       tag: tag,
                       child: Container(
-                          width: 50,
-                          height: 50,
-                          child: Image.asset(
-                            image,
-                          )),
+                        width: 50,
+                        height: 50,
+                        child: Image.asset(
+                          image,
+                        ),
+                      ),
                     ),
                     SizedBox(width: wp(5)),
                     Column(
