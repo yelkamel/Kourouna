@@ -32,8 +32,6 @@ class LinkCard extends StatelessWidget {
                 title: Text(
                   title,
                   style: TextStyle(
-                    color: Theme.of(context).accentColor,
-                    fontFamily: 'Apercu',
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
                   ),

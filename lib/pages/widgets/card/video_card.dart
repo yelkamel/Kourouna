@@ -36,7 +36,7 @@ class VideoCard extends StatelessWidget {
         bevel: 12,
         decoration:
             NeumorphicDecoration(borderRadius: BorderRadius.circular(20)),
-        margin: EdgeInsets.only(top: 15, left: 20, right: 20, bottom: 50),
+        margin: EdgeInsets.only(top: 15, left: 20, right: 20, bottom: 10),
         child: Padding(
           padding: const EdgeInsets.all(6.0),
           child: Column(
@@ -54,14 +54,14 @@ class VideoCard extends StatelessWidget {
                   aspectRatio: 16 / 9,
                   child: Container(child: Image.network(imageUrl))),
               YMargin(10),
-              SizedBox(
+/*              SizedBox(
                 height: 70,
                 width: 70,
                 child: Lottie.asset(
                   Lotties.play,
                   repeat: false,
                 ),
-              )
+              )*/
             ],
           ),
         ),

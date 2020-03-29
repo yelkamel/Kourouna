@@ -5,7 +5,7 @@ import 'package:Kourouna/pages/widgets/button/cross_button.dart';
 import 'package:Kourouna/pages/widgets/margin.dart';
 import 'package:neumorphic/neumorphic.dart';
 
-class StayHome extends StatelessWidget {
+class Advice extends StatelessWidget {
   Widget _buildBigCard(BuildContext context, String image, String text) {
     return Card(
       elevation: 3,

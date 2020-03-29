@@ -42,8 +42,6 @@ class FileDownloadCard extends StatelessWidget {
                 title: Text(
                   "Dérogation exceptionel",
                   style: TextStyle(
-                    color: Theme.of(context).accentColor,
-                    fontFamily: 'Apercu',
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
                   ),
@@ -69,8 +67,6 @@ class FileDownloadCard extends StatelessWidget {
                 title: Text(
                   "Dérogation professionel",
                   style: TextStyle(
-                    color: Theme.of(context).accentColor,
-                    fontFamily: 'Apercu',
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
                   ),

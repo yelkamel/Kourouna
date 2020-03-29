@@ -49,7 +49,7 @@ const List<Widget> VideoWidgets = [
   ),
 ];
 
-class Virus extends StatelessWidget {
+class VideoSwiper extends StatelessWidget {
   final GlobalKey<SwipeStackState> _swipeKey = GlobalKey<SwipeStackState>();
 
   Widget _buildContent() {
@@ -92,11 +92,12 @@ class Virus extends StatelessWidget {
                 ),
               ),
               YMargin(10),
-              Expanded(
-                child: Container(child: _buildContent()),
+              Container(
+                height: hp(50),
+                child: _buildContent(),
               ),
               Container(
-                height: hp(20),
+                height: hp(15),
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -107,7 +108,7 @@ class Virus extends StatelessWidget {
                       },
                       icon: Icons.mood_bad,
                     ),
-                    SizedBox(width: 100),
+                    SizedBox(width: 150),
                     NeuIconButton(
                       onPressed: () {
                         _swipeKey.currentState.swipeRight();

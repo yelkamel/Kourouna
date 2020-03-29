@@ -8,13 +8,12 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:lottie/lottie.dart';
 import 'package:neumorphic/neumorphic.dart';
 
-class SocialDistance extends StatefulWidget {
+class MapInfo extends StatefulWidget {
   @override
-  _SocialDistanceState createState() => _SocialDistanceState();
+  _MapInfoState createState() => _MapInfoState();
 }
 
-class _SocialDistanceState extends State<SocialDistance>
-    with TickerProviderStateMixin {
+class _MapInfoState extends State<MapInfo> with TickerProviderStateMixin {
   Completer<GoogleMapController> _controllerMap = Completer();
   bool _show = false;
   LatLng _center = const LatLng(48.84596090011522, 2.373186598527708);

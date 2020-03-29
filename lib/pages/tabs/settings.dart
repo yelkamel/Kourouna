@@ -1,6 +1,7 @@
 import 'package:Kourouna/pages/widgets/card/file_download_card.dart';
 import 'package:Kourouna/pages/widgets/card/link_card.dart';
 import 'package:Kourouna/pages/widgets/card/notification_card.dart';
+import 'package:Kourouna/pages/widgets/card/share_card.dart';
 import 'package:Kourouna/pages/widgets/margin.dart';
 import 'package:flutter/material.dart';
 
@@ -17,23 +18,29 @@ class _SettingsPageState extends State<SettingsPage>
   Widget build(BuildContext context) {
     super.build(context);
     return Scaffold(
-      body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.all(15.0),
-          child: Column(
-            children: <Widget>[
-              NotificationCard(),
-              YMargin(30),
-              LinkCard(
-                  url: 'https://kourouna.nolt.io/',
-                  title: "Une sugestion pour l'application ?"),
-              YMargin(30),
-              FileDownloadCard(),
-              YMargin(30),
-              LinkCard(
-                  url: 'https://www.gouvernement.fr/info-coronavirus',
-                  title: "Les instructions du gouvernement"),
-            ],
+      body: SingleChildScrollView(
+        child: SafeArea(
+          child: Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: Column(
+              children: <Widget>[
+                YMargin(30),
+                NotificationCard(),
+                YMargin(30),
+                LinkCard(
+                    url: 'https://kourouna.nolt.io/',
+                    title: "Une sugestion pour l'application ?"),
+                YMargin(30),
+                FileDownloadCard(),
+                YMargin(30),
+                LinkCard(
+                    url: 'https://www.gouvernement.fr/info-coronavirus',
+                    title: "Les instructions du gouvernement"),
+                YMargin(30),
+                ShareCard(),
+                YMargin(30),
+              ],
+            ),
           ),
         ),
       ),

@@ -28,7 +28,7 @@ class _NotificationCardState extends State<NotificationCard> {
     return NeuCard(
       curveType: CurveType.flat,
       bevel: 8,
-      decoration: NeumorphicDecoration(borderRadius: BorderRadius.circular(8)),
+      decoration: NeumorphicDecoration(borderRadius: BorderRadius.circular(10)),
       child: Padding(
         padding:
             const EdgeInsets.only(bottom: 15, top: 15, left: 15, right: 25),
@@ -44,8 +44,6 @@ class _NotificationCardState extends State<NotificationCard> {
                       ? 'Activer'
                       : 'Désactiver',
                   style: TextStyle(
-                    color: Theme.of(context).accentColor,
-                    fontFamily: 'Apercu',
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
                   ),
@@ -56,8 +54,6 @@ class _NotificationCardState extends State<NotificationCard> {
                 Text(
                   'Notification',
                   style: TextStyle(
-                    color: Theme.of(context).accentColor,
-                    fontFamily: 'Apercu',
                     fontSize: 14,
                   ),
                 ),

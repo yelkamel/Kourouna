@@ -43,6 +43,7 @@ dependencies:
   provider: ^4.0.4
   swipe_stack: ^1.0.0
   neumorphic: ^0.1.2
+  share: ^0.6.3+6
 
   cupertino_icons: ^0.1.2
 

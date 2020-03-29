@@ -2,7 +2,6 @@ import 'dart:convert';
 
 import 'package:Kourouna/models/case_model.dart';
 import 'package:Kourouna/models/general_data_model.dart';
-import 'package:Kourouna/models/news_model.dart';
 import 'package:Kourouna/models/other_case_model.dart';
 import 'package:dio/dio.dart';
 import 'package:http/http.dart' as http;
