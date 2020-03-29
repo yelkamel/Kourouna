@@ -89,18 +89,18 @@ class _HomeState extends State<Home> {
                 tabBackgroundColor: Colors.grey[800],
                 tabs: [
                   GButton(
-                    icon: LineIcons.list_ul,
-                    text: 'Guides',
+                    icon: LineIcons.newspaper_o,
+                    text: 'Info',
                     backgroundColor: AppColors.cyan,
                   ),
                   GButton(
-                    icon: LineIcons.home,
-                    text: 'Home',
+                    icon: LineIcons.database,
+                    text: 'Chiffre',
                     backgroundColor: AppColors.cyan,
                   ),
                   GButton(
                     icon: LineIcons.cog,
-                    text: 'Settings',
+                    text: 'Réglage',
                     backgroundColor: AppColors.cyan,
                   ),
                 ],

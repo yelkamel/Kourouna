@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:neumorphic/neumorphic.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class LinkCard extends StatelessWidget {
@@ -8,11 +9,10 @@ class LinkCard extends StatelessWidget {
   const LinkCard({Key key, this.url, this.title}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return Card(
-      margin: Theme.of(context).cardTheme.margin,
-      shape: Theme.of(context).cardTheme.shape,
-      elevation: Theme.of(context).cardTheme.elevation,
-      color: Theme.of(context).cardTheme.color,
+    return NeuCard(
+      curveType: CurveType.flat,
+      bevel: 8,
+      decoration: NeumorphicDecoration(borderRadius: BorderRadius.circular(8)),
       child: InkWell(
         onTap: () async {
           if (await canLaunch(url)) {
@@ -38,7 +38,7 @@ class LinkCard extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                trailing: Icon(Icons.arrow_right),
+                trailing: Icon(Icons.chevron_right),
               ),
             ),
           ],

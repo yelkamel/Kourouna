@@ -1,10 +1,12 @@
 import 'dart:async';
 
 import 'package:Kourouna/pages/widgets/button/cross_button.dart';
+import 'package:Kourouna/pages/widgets/margin.dart';
 import 'package:flutter/material.dart';
 import 'package:Kourouna/@constants/images.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:lottie/lottie.dart';
+import 'package:neumorphic/neumorphic.dart';
 
 class SocialDistance extends StatefulWidget {
   @override
@@ -38,9 +40,10 @@ class _SocialDistanceState extends State<SocialDistance>
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        body: Stack(children: [
+    return Scaffold(
+      body: SafeArea(
+        bottom: false,
+        child: Stack(children: [
           Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             mainAxisSize: MainAxisSize.max,
@@ -57,14 +60,11 @@ class _SocialDistanceState extends State<SocialDistance>
                   ),
                 ),
               ),
+              YMargin(10),
               Expanded(
-                child: Card(
-                  elevation: 3,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                  margin: EdgeInsets.only(
-                      top: 15, left: 30, right: 30, bottom: 100),
+                child: NeuCard(
+                  curveType: CurveType.emboss,
+                  bevel: 15,
                   child: Stack(children: [
                     GoogleMap(
                       onCameraIdle: () {
@@ -109,9 +109,11 @@ class _SocialDistanceState extends State<SocialDistance>
               ),
             ],
           ),
-          Align(
-            alignment: Alignment.bottomCenter,
-            child: CrossButton(),
+          SafeArea(
+            child: Align(
+              alignment: Alignment.bottomCenter,
+              child: CrossButton(),
+            ),
           )
         ]),
       ),

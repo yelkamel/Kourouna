@@ -1,5 +1,6 @@
 import 'package:Kourouna/service/local_notification.dart';
 import 'package:flutter/material.dart';
+import 'package:neumorphic/neumorphic.dart';
 import 'package:provider/provider.dart';
 
 class NotificationCard extends StatefulWidget {
@@ -24,11 +25,10 @@ class _NotificationCardState extends State<NotificationCard> {
   @override
   Widget build(BuildContext context) {
     final notificationService = Provider.of<NotificationChanger>(context);
-    return Card(
-      margin: Theme.of(context).cardTheme.margin,
-      shape: Theme.of(context).cardTheme.shape,
-      elevation: Theme.of(context).cardTheme.elevation,
-      color: Theme.of(context).cardTheme.color,
+    return NeuCard(
+      curveType: CurveType.flat,
+      bevel: 8,
+      decoration: NeumorphicDecoration(borderRadius: BorderRadius.circular(8)),
       child: Padding(
         padding:
             const EdgeInsets.only(bottom: 15, top: 15, left: 15, right: 25),
@@ -63,12 +63,16 @@ class _NotificationCardState extends State<NotificationCard> {
                 ),
               ],
             ),
-            GestureDetector(
-              child: Switch(
-                value: notificationService.allowNotification,
-                onChanged: (value) => onPressNotification(),
-              ),
-              onTap: onPressNotification,
+            NeuSwitch<int>(
+              backgroundColor: Theme.of(context).cardTheme.color,
+              onValueChanged: (value) => onPressNotification(),
+              groupValue: notificationService.allowNotification ? 1 : 0,
+              children: {
+                0: Padding(
+                    padding: EdgeInsets.all(7), child: Icon(Icons.alarm_off)),
+                1: Padding(
+                    padding: EdgeInsets.all(7), child: Icon(Icons.alarm_on)),
+              },
             )
           ],
         ),

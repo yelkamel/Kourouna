@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:neumorphic/neumorphic.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class FileDownloadCard extends StatelessWidget {
@@ -8,11 +9,10 @@ class FileDownloadCard extends StatelessWidget {
       'https://www.gouvernement.fr/sites/default/files/cfiles/justificatif-deplacement-professionnel-fr.pdf';
   @override
   Widget build(BuildContext context) {
-    return Card(
-      margin: Theme.of(context).cardTheme.margin,
-      shape: Theme.of(context).cardTheme.shape,
-      elevation: Theme.of(context).cardTheme.elevation,
-      color: Theme.of(context).cardTheme.color,
+    return NeuCard(
+      curveType: CurveType.flat,
+      bevel: 8,
+      decoration: NeumorphicDecoration(borderRadius: BorderRadius.circular(8)),
       child: Column(
         children: <Widget>[
           Align(
@@ -48,7 +48,7 @@ class FileDownloadCard extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                trailing: Icon(Icons.arrow_right),
+                trailing: Icon(Icons.chevron_right),
               ),
             ),
           ),
@@ -75,7 +75,7 @@ class FileDownloadCard extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                trailing: Icon(Icons.arrow_right),
+                trailing: Icon(Icons.chevron_right),
               ),
             ),
           )

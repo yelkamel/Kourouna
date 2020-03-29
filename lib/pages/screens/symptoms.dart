@@ -1,9 +1,11 @@
+import 'package:Kourouna/pages/widgets/card/info_card.dart';
 import 'package:flutter/material.dart';
 import 'package:Kourouna/@constants/images.dart';
 import 'package:Kourouna/pages/widgets/button/cross_button.dart';
 import 'package:Kourouna/pages/widgets/margin.dart';
 import 'package:Kourouna/theme/theme.dart';
 import 'package:line_icons/line_icons.dart';
+import 'package:neumorphic/neumorphic.dart';
 
 import '../../theme/color/light_color.dart';
 
@@ -34,19 +36,21 @@ class Symptoms extends StatelessWidget {
   }
 
   Widget _buildCard(String image, String text) {
-    return Card(
-      elevation: 3,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15),
-      ),
-      margin: EdgeInsets.only(top: 15, left: 20, right: 20),
-      child: Padding(
-        padding: const EdgeInsets.all(6.0),
-        child: ListTile(
-          leading: Image.asset(image),
-          title: Text(
-            text,
-            style: TextStyle(color: AppColors.cyan),
+    return Padding(
+      padding: const EdgeInsets.all(20.0),
+      child: NeuCard(
+        curveType: CurveType.concave,
+        bevel: 12,
+        decoration:
+            NeumorphicDecoration(borderRadius: BorderRadius.circular(8)),
+        child: Padding(
+          padding: const EdgeInsets.all(6.0),
+          child: ListTile(
+            leading: Image.asset(image),
+            title: Text(
+              text,
+              style: TextStyle(color: AppColors.cyan),
+            ),
           ),
         ),
       ),
@@ -71,20 +75,32 @@ class Symptoms extends StatelessWidget {
                   child: Image.asset(Images.advice),
                 ),
               ),
+              YMargin(10),
               Expanded(
                 child: Container(
                   child: ListView(
                     padding: EdgeInsets.only(bottom: 100),
                     children: [
-                      _buildCard(Images.symptomsBodyAche,
-                          "Des courbatures sans faire de sport"),
-                      _buildCard(Images.symptomsBreath,
-                          "Des difficulters à respirer sans être asmathiques"),
-                      _buildCard(Images.symptomsFever, "Une fièvre"),
-                      _buildCard(Images.symptomsHeadAche,
-                          "Des mots de tête incéssant"),
-                      _buildCard(Images.symptomsRhume,
-                          "Des toux comme si c'était un rhume"),
+                      InfoCard(
+                        text: "Des courbatures sans faire de sport",
+                        image: Images.symptomsBodyAche,
+                      ),
+                      InfoCard(
+                        text: "Des courbatures sans faire de sport",
+                        image: Images.symptomsBreath,
+                      ),
+                      InfoCard(
+                        text: "Des courbatures sans faire de sport",
+                        image: Images.symptomsFever,
+                      ),
+                      InfoCard(
+                        text: "Des courbatures sans faire de sport",
+                        image: Images.symptomsHeadAche,
+                      ),
+                      InfoCard(
+                        text: "Des courbatures sans faire de sport",
+                        image: Images.symptomsRhume,
+                      ),
                     ],
                   ),
                 ),

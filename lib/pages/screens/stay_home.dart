@@ -1,7 +1,9 @@
+import 'package:Kourouna/pages/widgets/card/info_card.dart';
 import 'package:flutter/material.dart';
 import 'package:Kourouna/@constants/images.dart';
 import 'package:Kourouna/pages/widgets/button/cross_button.dart';
 import 'package:Kourouna/pages/widgets/margin.dart';
+import 'package:neumorphic/neumorphic.dart';
 
 class StayHome extends StatelessWidget {
   Widget _buildBigCard(BuildContext context, String image, String text) {
@@ -30,19 +32,21 @@ class StayHome extends StatelessWidget {
   }
 
   Widget _buildCard(BuildContext context, String image, String text) {
-    return Card(
-      elevation: 3,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15),
-      ),
-      margin: EdgeInsets.only(top: 15, left: 20, right: 20),
-      child: Padding(
-        padding: const EdgeInsets.all(6.0),
-        child: ListTile(
-          leading: Image.asset(image),
-          title: Text(
-            text,
-            style: TextStyle(color: Theme.of(context).primaryColor),
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: NeuCard(
+        curveType: CurveType.concave,
+        bevel: 12,
+        decoration:
+            NeumorphicDecoration(borderRadius: BorderRadius.circular(8)),
+        child: Padding(
+          padding: const EdgeInsets.all(6.0),
+          child: ListTile(
+            leading: Image.asset(image),
+            title: Text(
+              text,
+              style: TextStyle(color: Theme.of(context).primaryColor),
+            ),
           ),
         ),
       ),
@@ -67,21 +71,35 @@ class StayHome extends StatelessWidget {
                   child: Image.asset(Images.stay),
                 ),
               ),
+              YMargin(10),
               Expanded(
                 child: Container(
                   child: ListView(
                     padding: EdgeInsets.only(bottom: 100),
                     children: [
-                      _buildCard(context, Images.washHands,
-                          "Lavez-vous très régulierement les mains"),
-                      _buildCard(context, Images.stayHome,
-                          "Utilisez un mouchoir à usage unique et jetez-le"),
-                      _buildCard(context, Images.socialDistance,
-                          "Pour tenir la maladie à distance, restez à plus d’un mètre de distance les uns des autres"),
-                      _buildCard(context, Images.noGroup,
-                          "Toussez ou éternuez dans votre coude ou dans un mouchoir"),
-                      _buildCard(context, Images.nohandshake,
-                          "Saluez sans se serrer la main, pas d'embrassades"),
+                      InfoCard(
+                        text: "Lavez-vous très régulierement les mains",
+                        image: Images.stayHome,
+                      ),
+                      InfoCard(
+                        text: "Utilisez un mouchoir à usage unique et jetez-le",
+                        image: Images.socialDistance,
+                      ),
+                      InfoCard(
+                        text:
+                            "Pour tenir la maladie à distance, restez à plus d’un mètre de distance les uns des autres",
+                        image: Images.socialDistance,
+                      ),
+                      InfoCard(
+                        text:
+                            "Toussez ou éternuez dans votre coude ou dans un mouchoir",
+                        image: Images.socialDistance,
+                      ),
+                      InfoCard(
+                        text:
+                            "Saluez sans se serrer la main, pas d'embrassades",
+                        image: Images.nohandshake,
+                      ),
                     ],
                   ),
                 ),

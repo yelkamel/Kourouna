@@ -1,33 +1,80 @@
 import 'package:Kourouna/pages/widgets/button/cross_button.dart';
+import 'package:Kourouna/pages/widgets/button/neu_icon_button.dart';
 import 'package:Kourouna/pages/widgets/card/video_card.dart';
+import 'package:Kourouna/pages/widgets/margin.dart';
 import 'package:flutter/material.dart';
 import 'package:Kourouna/@constants/images.dart';
+import 'package:line_icons/line_icons.dart';
+import 'package:neumorphic/neumorphic.dart';
+import 'package:responsive_screen/responsive_screen.dart';
+import 'package:swipe_stack/swipe_stack.dart';
 
 import '../../theme/color/light_color.dart';
 
+const List<Widget> VideoWidgets = [
+  VideoCard(
+    id: 'wesh',
+    title: 'Cette pandémie, vue depuis 2021 - DBY #67',
+    description: "Le prof de SVT",
+    url: 'https://www.youtube.com/watch?v=bM7AOBxqjnE&t=910s',
+    imageUrl: "http://i1.ytimg.com/vi/bM7AOBxqjnE/maxresdefault.jpg",
+  ),
+  VideoCard(
+    id: 'weswesh',
+    title: "CORONAVIRUS : PEUT-ON L'AVOIR DEUX FOIS ?",
+    description: "Wesh wesh les zamis",
+    url: 'https://www.youtube.com/watch?v=OhMOe8uncB8',
+    imageUrl: "http://i1.ytimg.com/vi/OhMOe8uncB8/mqdefault.jpg",
+  ),
+  VideoCard(
+    id: 'phi',
+    title: 'Éthique médicale au temps du COVID-19',
+    description: "Vu par le prof de philo",
+    url: 'https://www.youtube.com/watch?v=CaaEGtFH4FE',
+    imageUrl: "http://i1.ytimg.com/vi/CaaEGtFH4FE/mqdefault.jpg",
+  ),
+  VideoCard(
+    id: 'lemonde',
+    title: 'Coronavirus et Covid19 : quels risques pour votre santé ?',
+    description: "Ce qu'en dit un medecin",
+    url: 'https://www.youtube.com/watch?v=pYBETWfFYhw',
+    imageUrl: "http://i1.ytimg.com/vi/pYBETWfFYhw/maxresdefault.jpg",
+  ),
+  VideoCard(
+    id: 'rirejaune',
+    title: 'CORONAVIRUS : RESTEZ CHEZ VOUS !',
+    description: "Tout est dans le titre",
+    url: 'https://www.youtube.com/watch?v=E18IvjXR4nk',
+    imageUrl: "http://i1.ytimg.com/vi/E18IvjXR4nk/maxresdefault.jpg",
+  ),
+];
+
 class Virus extends StatelessWidget {
+  final GlobalKey<SwipeStackState> _swipeKey = GlobalKey<SwipeStackState>();
+
+  Widget _buildContent() {
+    return SwipeStack(
+      key: _swipeKey,
+      children: [0, 1, 2, 3, 4].map((int index) {
+        return SwiperItem(builder: (SwiperPosition position, double progress) {
+          return VideoWidgets[index];
+        });
+      }).toList(),
+      visibleCount: 4,
+      stackFrom: StackFrom.Top,
+      translationInterval: 9,
+      scaleInterval: 0.09,
+      onEnd: () => debugPrint("onEnd"),
+      onSwipe: (int index, SwiperPosition position) =>
+          debugPrint("onSwipe $index $position"),
+      onRewind: (int index, SwiperPosition position) =>
+          debugPrint("onRewind $index $position"),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
-    Widget _buildCard(String image, String text) {
-      return Card(
-        elevation: 3,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(15),
-        ),
-        margin: EdgeInsets.only(top: 15, left: 20, right: 20),
-        child: Padding(
-          padding: const EdgeInsets.all(6.0),
-          child: ListTile(
-            leading: Image.asset(image),
-            title: Text(
-              text,
-              style: TextStyle(color: AppColors.cyan),
-            ),
-          ),
-        ),
-      );
-    }
-
+    final Function hp = Screen(context).hp;
     return Scaffold(
       body: SafeArea(
         child: Stack(children: [
@@ -44,52 +91,32 @@ class Virus extends StatelessWidget {
                   child: Image.asset(Images.virus),
                 ),
               ),
+              YMargin(10),
               Expanded(
-                child: Container(
-                  child: ListView(
-                    padding: EdgeInsets.only(bottom: 100),
-                    children: [
-                      VideoCard(
-                        title: 'Cette pandémie, vue depuis 2021 - DBY #67',
-                        subTitle: "Le prof de SVT",
-                        url:
-                            'https://www.youtube.com/watch?v=bM7AOBxqjnE&t=910s',
-                        miniatureUrl:
-                            "http://i1.ytimg.com/vi/bM7AOBxqjnE/maxresdefault.jpg",
-                      ),
-                      VideoCard(
-                        title: "CORONAVIRUS : PEUT-ON L'AVOIR DEUX FOIS ?",
-                        subTitle: "Wesh wesh les zamis",
-                        url: 'https://www.youtube.com/watch?v=OhMOe8uncB8',
-                        miniatureUrl:
-                            "http://i1.ytimg.com/vi/OhMOe8uncB8/mqdefault.jpg",
-                      ),
-                      VideoCard(
-                        title: 'Éthique médicale au temps du COVID-19',
-                        subTitle: "Vu par le prof de philo",
-                        url: 'https://www.youtube.com/watch?v=CaaEGtFH4FE',
-                        miniatureUrl:
-                            "http://i1.ytimg.com/vi/CaaEGtFH4FE/mqdefault.jpg",
-                      ),
-                      VideoCard(
-                        title:
-                            'Coronavirus et Covid19 : quels risques pour votre santé ?',
-                        subTitle: "Ce qu'en dit un medecin",
-                        url: 'https://www.youtube.com/watch?v=pYBETWfFYhw',
-                        miniatureUrl:
-                            "http://i1.ytimg.com/vi/pYBETWfFYhw/maxresdefault.jpg",
-                      ),
-                      VideoCard(
-                        title: 'CORONAVIRUS : RESTEZ CHEZ VOUS !',
-                        subTitle: "Tout est dans le titre",
-                        url: 'https://www.youtube.com/watch?v=E18IvjXR4nk',
-                        miniatureUrl:
-                            "http://i1.ytimg.com/vi/E18IvjXR4nk/maxresdefault.jpg",
-                      ),
-                    ],
-                  ),
-                ),
+                child: Container(child: _buildContent()),
               ),
+              Container(
+                height: hp(20),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    NeuIconButton(
+                      onPressed: () {
+                        _swipeKey.currentState.swipeLeft();
+                      },
+                      icon: Icons.mood_bad,
+                    ),
+                    SizedBox(width: 100),
+                    NeuIconButton(
+                      onPressed: () {
+                        _swipeKey.currentState.swipeRight();
+                      },
+                      icon: Icons.check,
+                    )
+                  ],
+                ),
+              )
             ],
           ),
           Align(

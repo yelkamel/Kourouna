@@ -42,6 +42,7 @@ dependencies:
   flutter_local_notifications: ^1.2.2
   provider: ^4.0.4
   swipe_stack: ^1.0.0
+  neumorphic: ^0.1.2
 
   cupertino_icons: ^0.1.2
 
@@ -80,6 +81,7 @@ flutter:
     - assets/images/info/advice.png
 
     - assets/images/instruction_medical.png
+    - assets/lottie/play.json
 
 
 

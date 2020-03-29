@@ -1,7 +1,7 @@
 import 'package:Kourouna/pages/widgets/card/file_download_card.dart';
 import 'package:Kourouna/pages/widgets/card/link_card.dart';
-import 'package:Kourouna/pages/widgets/card/nolt_card.dart';
 import 'package:Kourouna/pages/widgets/card/notification_card.dart';
+import 'package:Kourouna/pages/widgets/margin.dart';
 import 'package:flutter/material.dart';
 
 class SettingsPage extends StatefulWidget {
@@ -23,10 +23,13 @@ class _SettingsPageState extends State<SettingsPage>
           child: Column(
             children: <Widget>[
               NotificationCard(),
+              YMargin(30),
               LinkCard(
                   url: 'https://kourouna.nolt.io/',
                   title: "Une sugestion pour l'application ?"),
+              YMargin(30),
               FileDownloadCard(),
+              YMargin(30),
               LinkCard(
                   url: 'https://www.gouvernement.fr/info-coronavirus',
                   title: "Les instructions du gouvernement"),

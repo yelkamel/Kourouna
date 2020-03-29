@@ -1,6 +1,7 @@
 import 'package:Kourouna/repositories/repositories.dart';
 import 'package:Kourouna/service/local_notification.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:Kourouna/theme/theme.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
@@ -17,6 +18,16 @@ void main() async {
 
   final ApiRepository apiRepository = ApiRepository(apiClient: ApiClient());
   BlocSupervisor.delegate = SimpleBlocDelegate();
+
+  // Blocker l'orientation vertical
+  SystemChrome.setPreferredOrientations(
+      [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
+
+  // Navigation color change
+  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+    systemNavigationBarColor: Colors.deepOrange,
+    systemNavigationBarIconBrightness: Brightness.light,
+  ));
 
   //  Local Notification Init
   FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =

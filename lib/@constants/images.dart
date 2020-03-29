@@ -1,5 +1,4 @@
 class Images {
-  // WHAT TO DO
   static const String washHands = "assets/images/stayhome/washhands.png";
   static const String noGroup = "assets/images/stayhome/noGroup.png";
   static const String socialDistance =
@@ -22,6 +21,4 @@ class Images {
 
   static const String instructionMedical =
       "assets/images/instruction_medical.png";
-
-  // Numbers
 }
