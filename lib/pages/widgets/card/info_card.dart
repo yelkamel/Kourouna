@@ -23,7 +23,6 @@ class InfoCard extends StatelessWidget {
             leading: Image.asset(image),
             title: Text(
               text,
-              style: TextStyle(color: AppColors.cyan),
             ),
           ),
         ),

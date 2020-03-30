@@ -39,13 +39,14 @@ class InformationTitleCard extends StatelessWidget {
             ),
           ),
           title: Text(title,
-              style: AppTheme.h2Style.copyWith(
-                  color: LightColor.darkgrey,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 16)),
+              style: TextStyle(
+                color: LightColor.darkgrey,
+                fontWeight: FontWeight.bold,
+                fontSize: 16,
+              )),
           subtitle: Text(
             subTitle,
-            style: AppTheme.h2Style.copyWith(
+            style: TextStyle(
                 color: LightColor.darkgrey.withOpacity(0.5), fontSize: 16),
           ),
         ),

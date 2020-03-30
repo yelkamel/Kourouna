@@ -44,6 +44,9 @@ dependencies:
   swipe_stack: ^1.0.0
   neumorphic: ^0.1.2
   share: ^0.6.3+6
+  firebase_core: ^0.4.4+3
+  uuid: 2.0.4
+  cloud_firestore: ^0.13.4+2
 
   cupertino_icons: ^0.1.2
 
@@ -83,6 +86,7 @@ flutter:
 
     - assets/images/instruction_medical.png
     - assets/lottie/play.json
+    - assets/lottie/mapvirus.json
 
 
 

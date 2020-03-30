@@ -1,15 +1,19 @@
 import 'dart:async';
 
 import 'package:Kourouna/blocs/blocs.dart';
+import 'package:Kourouna/pages/widgets/card/error_card.dart';
 import 'package:Kourouna/pages/widgets/card/global_card.dart';
 import 'package:Kourouna/pages/widgets/card/other_card.dart';
+import 'package:Kourouna/pages/widgets/kou_loader.dart';
 import 'package:Kourouna/pages/widgets/margin.dart';
+import 'package:Kourouna/pages/widgets/webview_api.dart';
 import 'package:Kourouna/theme/color/light_color.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:Kourouna/utils/calculate.dart';
+import 'package:lottie/lottie.dart';
 import 'package:responsive_screen/responsive_screen.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -49,11 +53,7 @@ class _HomeScreenState extends State<HomeScreen>
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   YMargin(hp(29)),
-                  Center(
-                      child: SpinKitSquareCircle(
-                    color: AppColors.green,
-                    size: 50.0,
-                  )),
+                  Center(child: KouLoader()),
                 ],
               );
             }
@@ -115,10 +115,8 @@ class _HomeScreenState extends State<HomeScreen>
               );
             }
             if (state is CaseError) {
-              return Text(
-                'Something went wrong!',
-                style:
-                    GoogleFonts.cabin(textStyle: TextStyle(color: Colors.red)),
+              return Container(
+                child: ErrorCard(),
               );
             }
             return Center(

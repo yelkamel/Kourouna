@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "803673910965",
+    "firebase_url": "https://kourouna.firebaseio.com",
+    "project_id": "kourouna",
+    "storage_bucket": "kourouna.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:803673910965:android:89f98cf66c822655ffd8fc",
+        "android_client_info": {
+          "package_name": "com.layouceferie.Kourouna"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "803673910965-orchpdqpbl3av17f17fk5t9t8nf1rpdk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBx7Hb1SVZJl2LXwN-c3y2gfQccS996ZSU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "803673910965-orchpdqpbl3av17f17fk5t9t8nf1rpdk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -19,6 +19,7 @@ class ApiClient {
   }
   Future<GeneralDataModel> getAllCountryData() async {
     final url = '$baseUrl?global=stats';
+    // final url = "https://thevirustracker.com/free-api?countryTotal=FR ?";
 
     try {
       final response = await _dio.get(url);

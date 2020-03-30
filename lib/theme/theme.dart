@@ -29,6 +29,7 @@ class AppTheme {
     accentColor: LightColor.lightblack,
     primaryColorDark: LightColor.Darker,
     primaryColorLight: LightColor.brighter,
+    fontFamily: 'Monaco',
     cardTheme: CardTheme(
       color: LightColor.background,
       margin: EdgeInsets.all(10),

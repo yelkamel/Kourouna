@@ -1,59 +1,68 @@
-import 'package:Kourouna/@constants/lottie.dart';
+import 'package:Kourouna/models/video_model.dart';
 import 'package:Kourouna/pages/widgets/margin.dart';
 import 'package:Kourouna/theme/color/light_color.dart';
 import 'package:flutter/material.dart';
-import 'package:line_icons/line_icons.dart';
-import 'package:lottie/lottie.dart';
 import 'package:neumorphic/neumorphic.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class VideoCard extends StatelessWidget {
-  final String id;
+  final Video video;
 
-  final String title;
-  final String description;
-  final String url;
-  final String imageUrl;
-
-  const VideoCard(
-      {Key key, this.id, this.title, this.description, this.url, this.imageUrl})
-      : super(key: key);
+  const VideoCard({Key key, this.video}) : super(key: key);
 
   void onTapPlay() async {
-    if (await canLaunch(url)) {
-      await launch(url);
+    if (await canLaunch(video.url)) {
+      await launch(video.url);
     } else {
-      throw 'Could not launch $url';
+      throw 'Could not launch $video.url';
     }
   }
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: onTapPlay,
-      child: NeuCard(
-        curveType: CurveType.concave,
-        bevel: 12,
-        decoration:
-            NeumorphicDecoration(borderRadius: BorderRadius.circular(20)),
-        margin: EdgeInsets.only(top: 15, left: 20, right: 20, bottom: 10),
-        child: Padding(
-          padding: const EdgeInsets.all(6.0),
-          child: Column(
-            children: <Widget>[
-              ListTile(
-                title: Text(
-                  title,
-                  style: TextStyle(color: AppColors.cyan),
-                ),
-                subtitle: Text(
-                  description,
+    return NeuCard(
+      curveType: CurveType.concave,
+      bevel: 12,
+      decoration: NeumorphicDecoration(borderRadius: BorderRadius.circular(20)),
+      child: InkWell(
+        onTap: onTapPlay,
+        child: Column(
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            ListTile(
+              title: Text(
+                video.title,
+                style: TextStyle(color: AppColors.cyan),
+              ),
+              subtitle: Text(
+                video.description,
+              ),
+            ),
+            ClipRect(
+              child: AspectRatio(
+                aspectRatio: 16 / 9,
+                child: Container(
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: NetworkImage(video.imageUrl),
+                      fit: BoxFit.cover,
+                    ),
+                    borderRadius: BorderRadius.only(
+                      bottomLeft: Radius.circular(20),
+                      bottomRight: Radius.circular(20),
+                    ),
+                  ),
                 ),
               ),
-              AspectRatio(
-                  aspectRatio: 16 / 9,
-                  child: Container(child: Image.network(imageUrl))),
-              YMargin(10),
+            )
+          ],
+        ),
+      ),
+    );
+  }
+}
+
 /*              SizedBox(
                 height: 70,
                 width: 70,
@@ -61,11 +70,5 @@ class VideoCard extends StatelessWidget {
                   Lotties.play,
                   repeat: false,
                 ),
+                
               )*/
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}

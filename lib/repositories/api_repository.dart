@@ -1,10 +1,7 @@
-import 'package:Kourouna/models/case_model.dart';
 import 'package:Kourouna/models/general_data_model.dart';
 import 'package:Kourouna/models/other_case_model.dart';
 import 'package:Kourouna/repositories/api_client.dart';
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
 
 class ApiRepository {
   final ApiClient apiClient;
@@ -25,12 +22,4 @@ class ApiRepository {
   Future<OtherCaseModel> getDeathCases() async {
     return apiClient.getDeathCases();
   }
-
-  Future<http.Response> getCountryNews() async {
-    return apiClient.getCountryNews('NG');
-  }
-  // Future<OtherCaseModel> getSuspectedCases() async {
-  //   return apiClient.getSuspectedCases();
-  // }
-
 }

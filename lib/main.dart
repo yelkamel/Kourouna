@@ -1,5 +1,10 @@
+import 'dart:io';
+
 import 'package:Kourouna/repositories/repositories.dart';
+import 'package:Kourouna/service/database.dart';
 import 'package:Kourouna/service/local_notification.dart';
+import 'package:Kourouna/theme/color/light_color.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -25,9 +30,23 @@ void main() async {
 
   // Navigation color change
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-    systemNavigationBarColor: Colors.deepOrange,
-    systemNavigationBarIconBrightness: Brightness.light,
+    systemNavigationBarColor: Colors.white,
+    statusBarColor: AppColors.cyan,
+    systemNavigationBarIconBrightness: Brightness.dark,
   ));
+
+  // Firebase Init
+  /* final FirebaseApp app = await FirebaseApp.configure(
+    name: 'kourouna',
+    options: FirebaseOptions(
+      googleAppID: Platform.isIOS
+          ? '1:803673910965:ios:e429d48676fe49ceffd8fc'
+          : '1:803673910965:android:89f98cf66c822655ffd8fc',
+      apiKey: 'AIzaSyBzPbFbdMxzLE-NChCr-lBT6atWxHfVmKQ',
+      projectID: 'kourouna',
+    ),
+  ); */
+  // END
 
   //  Local Notification Init
   FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
@@ -44,6 +63,7 @@ void main() async {
   flutterLocalNotificationsPlugin.initialize(initializationSettings,
       onSelectNotification: null);
   // END
+  final Database database = FirestoreDatabase();
 
   runApp(
     MultiBlocProvider(
@@ -51,13 +71,17 @@ void main() async {
         BlocProvider<CaseBloc>(
           create: (context) => CaseBloc(apiRepository: apiRepository),
         ),
-        //     BlocProvider<NewsBloc>(
-        //         create: (context) => NewsBloc(apiRepository: apiRepository),
-        //      ),
       ],
-      child: MyApp(
-        apiRepository: apiRepository,
-        localNotificationPlugin: flutterLocalNotificationsPlugin,
+      child: MultiProvider(
+        providers: [
+          Provider<Database>(
+            create: (_) => database,
+          ),
+        ],
+        child: MyApp(
+          apiRepository: apiRepository,
+          localNotificationPlugin: flutterLocalNotificationsPlugin,
+        ),
       ),
     ),
   );

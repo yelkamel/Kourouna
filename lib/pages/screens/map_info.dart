@@ -77,26 +77,34 @@ class _MapInfoState extends State<MapInfo> with TickerProviderStateMixin {
                     ),
                     FadeTransition(
                       opacity: _animation,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        mainAxisSize: MainAxisSize.max,
+                      child: Stack(
                         children: <Widget>[
-                          Lottie.network(
-                              "https://assets6.lottiefiles.com/packages/lf20_PnbvHJ.json"),
-                          Card(
-                            elevation: 3,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(15),
+                          RotatedBox(
+                            quarterTurns: 3,
+                            child: Center(
+                              child: Lottie.asset(
+                                "assets/lottie/mapvirus.json",
+                                fit: BoxFit.fitWidth,
+                              ),
                             ),
-                            margin: EdgeInsets.only(
-                                top: 20, left: 30, right: 30, bottom: 10),
-                            child: Padding(
-                              padding: const EdgeInsets.all(5.0),
-                              child: ListTile(
-                                title:
-                                    Text("Il ne faut pas sortir de chez soi !"),
-                                leading: Image.asset(Images.instructionMedical),
+                          ),
+                          Align(
+                            alignment: Alignment.bottomCenter,
+                            child: Card(
+                              elevation: 3,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(15),
+                              ),
+                              margin: EdgeInsets.only(
+                                  top: 20, left: 30, right: 30, bottom: 100),
+                              child: Padding(
+                                padding: const EdgeInsets.all(5.0),
+                                child: ListTile(
+                                  title: Text(
+                                      "Il ne faut pas sortir de chez soi !"),
+                                  leading:
+                                      Image.asset(Images.instructionMedical),
+                                ),
                               ),
                             ),
                           ),

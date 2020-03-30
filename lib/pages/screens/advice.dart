@@ -1,4 +1,5 @@
 import 'package:Kourouna/pages/widgets/card/info_card.dart';
+import 'package:Kourouna/pages/widgets/top_illussion.dart';
 import 'package:flutter/material.dart';
 import 'package:Kourouna/@constants/images.dart';
 import 'package:Kourouna/pages/widgets/button/cross_button.dart';
@@ -6,53 +7,6 @@ import 'package:Kourouna/pages/widgets/margin.dart';
 import 'package:neumorphic/neumorphic.dart';
 
 class Advice extends StatelessWidget {
-  Widget _buildBigCard(BuildContext context, String image, String text) {
-    return Card(
-      elevation: 3,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15),
-      ),
-      margin: EdgeInsets.only(top: 15, left: 20, right: 20),
-      child: Padding(
-        padding: const EdgeInsets.all(6.0),
-        child: Column(
-          mainAxisSize: MainAxisSize.max,
-          children: <Widget>[
-            Container(height: 90, child: Image.asset(image)),
-            YMargin(8),
-            Text(
-              text,
-              textAlign: TextAlign.center,
-              style: TextStyle(color: Theme.of(context).primaryColor),
-            )
-          ],
-        ),
-      ),
-    );
-  }
-
-  Widget _buildCard(BuildContext context, String image, String text) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: NeuCard(
-        curveType: CurveType.concave,
-        bevel: 12,
-        decoration:
-            NeumorphicDecoration(borderRadius: BorderRadius.circular(8)),
-        child: Padding(
-          padding: const EdgeInsets.all(6.0),
-          child: ListTile(
-            leading: Image.asset(image),
-            title: Text(
-              text,
-              style: TextStyle(color: Theme.of(context).primaryColor),
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -63,6 +17,7 @@ class Advice extends StatelessWidget {
             mainAxisSize: MainAxisSize.max,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
+              TopIllusion(),
               Hero(
                 tag: 'stayhome',
                 child: Container(
