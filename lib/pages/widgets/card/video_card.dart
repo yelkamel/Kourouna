@@ -1,7 +1,9 @@
+import 'package:Kourouna/@constants/lotties.dart';
 import 'package:Kourouna/models/video_model.dart';
 import 'package:Kourouna/pages/widgets/margin.dart';
 import 'package:Kourouna/theme/color/light_color.dart';
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 import 'package:neumorphic/neumorphic.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -18,6 +20,31 @@ class VideoCard extends StatelessWidget {
     }
   }
 
+  Widget _buildImage() {
+    if (video.type == 'tuto') {
+      return SizedBox(
+        height: 70,
+        width: 70,
+        child: Lottie.asset(
+          Lotties.think,
+          repeat: true,
+        ),
+      );
+    }
+    return Container(
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: NetworkImage(video.imageUrl),
+          fit: BoxFit.cover,
+        ),
+        borderRadius: BorderRadius.only(
+          bottomLeft: Radius.circular(20),
+          bottomRight: Radius.circular(20),
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return NeuCard(
@@ -30,31 +57,32 @@ class VideoCard extends StatelessWidget {
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
-            ListTile(
-              title: Text(
-                video.title,
-                style: TextStyle(color: AppColors.cyan),
-              ),
-              subtitle: Text(
-                video.description,
-              ),
-            ),
-            ClipRect(
-              child: AspectRatio(
-                aspectRatio: 16 / 9,
-                child: Container(
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: NetworkImage(video.imageUrl),
-                      fit: BoxFit.cover,
-                    ),
-                    borderRadius: BorderRadius.only(
-                      bottomLeft: Radius.circular(20),
-                      bottomRight: Radius.circular(20),
+            Column(
+              children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Text(
+                    video.title,
+                    style: TextStyle(
+                      color: Theme.of(context).accentColor,
+                      fontSize: 18,
                     ),
                   ),
                 ),
-              ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(
+                    video.description,
+                    style: TextStyle(
+                      color: Theme.of(context).accentColor,
+                      fontSize: 14,
+                    ),
+                  ),
+                )
+              ],
+            ),
+            ClipRect(
+              child: AspectRatio(aspectRatio: 16 / 9, child: _buildImage()),
             )
           ],
         ),
@@ -63,12 +91,5 @@ class VideoCard extends StatelessWidget {
   }
 }
 
-/*              SizedBox(
-                height: 70,
-                width: 70,
-                child: Lottie.asset(
-                  Lotties.play,
-                  repeat: false,
-                ),
-                
+/*             
               )*/

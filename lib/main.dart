@@ -36,7 +36,7 @@ void main() async {
   ));
 
   // Firebase Init
-  /* final FirebaseApp app = await FirebaseApp.configure(
+  /*final FirebaseApp app = await FirebaseApp.configure(
     name: 'kourouna',
     options: FirebaseOptions(
       googleAppID: Platform.isIOS
@@ -45,7 +45,7 @@ void main() async {
       apiKey: 'AIzaSyBzPbFbdMxzLE-NChCr-lBT6atWxHfVmKQ',
       projectID: 'kourouna',
     ),
-  ); */
+  );*/
   // END
 
   //  Local Notification Init

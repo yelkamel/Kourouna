@@ -29,7 +29,7 @@ class _InformationScreenState extends State<InformationScreen>
               InformationTitleCard(
                 image: Images.virus,
                 subTitle: "Que sait-on en ce moment ? ",
-                title: "Le CodVID19, le Corona",
+                title: "Le virus",
                 tag: 'virus',
                 onPressed: () {
                   Navigator.of(context, rootNavigator: true)
@@ -42,7 +42,7 @@ class _InformationScreenState extends State<InformationScreen>
               InformationTitleCard(
                 image: Images.advice,
                 subTitle: 'Les symptomes du virus ?',
-                title: 'Fièvre, mots de gorge, fatigue, tout ',
+                title: 'Fièvre, mots de gorge, fatigue... ',
                 tag: 'symptoms',
                 onPressed: () {
                   Navigator.of(context, rootNavigator: true)
@@ -55,7 +55,7 @@ class _InformationScreenState extends State<InformationScreen>
               InformationTitleCard(
                 image: Images.stay,
                 subTitle: 'Que dois-t-on faire ?',
-                title: 'Des astuces pour gagner la guerre',
+                title: 'Pour gagner la guerre',
                 tag: 'stayhome',
                 onPressed: () {
                   Navigator.of(context, rootNavigator: true)
@@ -68,7 +68,7 @@ class _InformationScreenState extends State<InformationScreen>
               InformationTitleCard(
                 image: Images.distance,
                 subTitle: 'Ou peut-on sortir ?',
-                title: 'Les cas près de chez moi',
+                title: 'Le confinement obligatoire',
                 tag: 'distance',
                 onPressed: () {
                   Navigator.of(context, rootNavigator: true)

@@ -87,6 +87,7 @@ flutter:
     - assets/images/instruction_medical.png
     - assets/lottie/play.json
     - assets/lottie/mapvirus.json
+    - assets/lottie/think.json
 
 
 

@@ -90,7 +90,7 @@ class _HomeScreenState extends State<HomeScreen>
                       cardColor: AppColors.red,
                     ),
                     OtherSituationCard(
-                      cardTitle: 'Merci et Courage 😁',
+                      cardTitle: 'Merci et Courage',
                       safeTitle: 'Des Guéries',
                       dangerTitle: 'En danger',
                       safeCase: currentData.totalRecovered,

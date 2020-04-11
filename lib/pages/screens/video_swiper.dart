@@ -1,6 +1,7 @@
 import 'package:Kourouna/models/video_model.dart';
 import 'package:Kourouna/pages/widgets/button/cross_button.dart';
 import 'package:Kourouna/pages/widgets/button/neu_icon_button.dart';
+import 'package:Kourouna/pages/widgets/card/error_card.dart';
 import 'package:Kourouna/pages/widgets/card/video_card.dart';
 import 'package:Kourouna/pages/widgets/kou_loader.dart';
 import 'package:Kourouna/pages/widgets/margin.dart';
@@ -16,9 +17,26 @@ class VideoSwiper extends StatelessWidget {
   final GlobalKey<SwipeStackState> _swipeKey = GlobalKey<SwipeStackState>();
 
   Widget _buildStack(List<Video> videos) {
+    var pairs = [
+      videos,
+      [
+        Video(
+            id: 'first',
+            type: 'tuto',
+            title: "Trier les sources d'informations",
+            description:
+                "Les vidéos vous aide tel à mieux comprendre la situation ? les informations sont-elles vrai ?",
+            url: "https://alfian-flutter-coronatracker.firebaseapp.com/#/",
+            imageUrl:
+                "https://media.istockphoto.com/vectors/young-hipster-business-man-thinking-standing-under-question-marks-vector-id860969712?k=6&m=860969712&s=612x612&w=0&h=NfP2QhYCiDnc49quXm-WoH3Py9zFI3lEJPnJVPQ1bGo=")
+      ],
+    ];
+
+    var flattened = pairs.expand((pair) => pair).toList();
+
     return SwipeStack(
       key: _swipeKey,
-      children: videos.map((Video vid) {
+      children: flattened.map((Video vid) {
         return SwiperItem(builder: (SwiperPosition position, double progress) {
           return VideoCard(video: vid);
         });
@@ -46,6 +64,10 @@ class VideoSwiper extends StatelessWidget {
         }
         if (snapshot.data.length == 0) {
           return Container();
+        }
+
+        if (snapshot.hasError) {
+          return ErrorCard();
         }
 
         List<Video> videos = snapshot.data;

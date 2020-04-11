@@ -76,10 +76,10 @@ class Symptoms extends StatelessWidget {
                 ),
               ),
               YMargin(10),
-              Expanded(
-                child: Container(
-                  child: ListView(
-                    padding: EdgeInsets.only(bottom: 100),
+              Center(
+                child:  ListWheelScrollView(
+                   // padding: EdgeInsets.only(bottom: 100),
+                   itemExtent: 4,
                     children: [
                       InfoCard(
                         text: "Des courbatures sans faire de sport",
@@ -104,7 +104,7 @@ class Symptoms extends StatelessWidget {
                     ],
                   ),
                 ),
-              ),
+              
             ],
           ),
           Align(
